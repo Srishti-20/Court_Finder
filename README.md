@@ -68,3 +68,103 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# Pickleball Court Finder
+
+## Description
+The **Pickleball Court Finder** is a web application designed to help users find pickleball courts in their area. It allows users to search for courts by location, filter courts based on proximity, and view additional information such as court type, access, lighting, and booking options. The map is interactive, and users can easily find details about each court by clicking on markers on the map.
+
+---
+
+## Features
+
+- **Search Bar**: Search courts based on name or location.
+- **Filter by Distance**: Filter courts by a specified range in kilometers.
+- **Interactive Map**: View a map with markers for each court, with the option to zoom in and out.
+- **Court Metadata**: Display detailed information about a court, including:
+  - Name
+  - Location
+  - Court Type
+  - Access and Lighting options
+  - Google Maps link for navigation
+  - Court booking link
+- **Autocomplete Suggestions**: Dynamically display suggestions while searching for courts.
+
+---
+
+## Tech Stack
+
+- **Frontend**: React.js, React-Leaflet, MUI
+- **Backend**: (If any, you can specify here)
+- **Map**: Leaflet.js for map rendering and interactivity
+- **Styling**: CSS for layout, styling, and responsiveness
+
+---
+
+## Installation
+
+### Requirements
+
+- Node.js (preferably the latest LTS version)
+- npm or yarn (to manage dependencies)
+
+### Steps to Run the Application Locally
+
+1. Clone the repository to your local machine.
+
+    ```bash
+    git clone <repo_url>
+    ```
+
+2. Navigate to the project directory.
+
+    ```bash
+    cd pickleball-court-finder
+    ```
+
+3. Install the necessary dependencies using npm or yarn.
+
+    ```bash
+    npm install
+    ```
+
+4. Run the development server.
+
+    ```bash
+    npm start
+    ```
+
+    The application should now be running on `http://localhost:3000`.
+
+---
+
+## Usage
+
+1. **Search for a Court**: Type a court name or location in the search bar. Autocomplete suggestions will appear.
+2. **Filter by Distance**: Use the dropdown to filter courts based on your desired distance range.
+3. **Map Interaction**: Click on the markers on the map to view more information about each court. If you select a court, the map will zoom in to its location.
+
+---
+
+## Folder Structure
+
+```bash
+├── public/              # Public assets
+├── src/                 # Source code
+│   ├── components/      # Reusable components (e.g., SearchBar, CourtMetadataBox, MapComponent)
+│   ├── App.js           # Main application component
+│   ├── index.js         # Entry point for React
+│   └── styles.css       # Global styles
+├── package.json         # Project dependencies and scripts
+└── README.md            # This file
+```
+---
+
+### Steps to Use the Template:
+
+1. **Copy the Markdown template** into a file called `README.md` in the root of your project directory.
+2. **Update the placeholders** like `<repo_url>` with the actual URL of your project repository.
+3. **Review the Tech Stack** and change it if necessary (you can add backend details if applicable).
+4. **Update Installation Instructions** based on any additional setup instructions or specific steps for your environment.
+
+Once you're done, your `README.md` will provide a comprehensive and clear guide to your project! Let me know if you want to make any further changes or additions.
