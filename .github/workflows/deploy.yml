@@ -5,18 +5,21 @@ on:
     branches:
       - main  # Trigger the workflow on push to the 'main' branch
 
+permissions:
+  contents: write  # Required to push to gh-pages branch
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '14'  # Use your desired Node.js version
+          node-version: '18'  # Use your desired Node.js version
 
       - name: Install dependencies
         run: npm install
@@ -27,9 +30,12 @@ jobs:
       - name: Set Git identity for GitHub Pages
         run: |
           git config --global user.email "2003srishti@gmail.com"
-          git config --global user.name "Srishti Gupta"
+          git config --global user.name "Srishti-20"
+      
+      - name: Add remote with token
+        run: git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/Srishti-20/Court_Finder.git
 
       - name: Deploy to GitHub Pages
         run: npm run deploy
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}  # GitHub token for deploying
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # ✅ Fix: use GITHUB_TOKEN, not GH_TOKEN
