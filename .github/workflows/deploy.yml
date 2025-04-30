@@ -24,6 +24,11 @@ jobs:
       - name: Build React app
         run: npm run build
 
+      - name: Set Git identity for GitHub Pages
+        run: |
+          git config --global user.email "2003srishti@gmail.com"
+          git config --global user.name "Srishti Gupta"
+
       - name: Deploy to GitHub Pages
         run: npm run deploy
         env:
