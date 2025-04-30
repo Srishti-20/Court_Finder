@@ -1,0 +1,14 @@
+/* Search Bar */
+.search-input{
+  flex: 1;                    /* fill available width */
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 0;                  /* no top-bottom margin inside flex */
+  transition: border-color 0.3s ease;
+  min-width: 0;               /* prevents overflow in flex */
+}
+.search-input:focus {
+  border-color: #4fa8e9;
+  outline: none;
+}

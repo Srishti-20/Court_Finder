@@ -1,0 +1,25 @@
+/* Map container enhancements */
+.leaflet-container {
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Marker hovers */
+.leaflet-marker-icon:hover {
+  filter: drop-shadow(0 0 6px #00aaff);
+  transform: scale(1.1);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Selected marker style */
+.selected-marker {
+  border: 2px solid red;
+  border-radius: 50%;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .court-metadata-box, .map-container {
+    flex: 1 1 100%;
+  }
+}

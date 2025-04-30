@@ -1,0 +1,38 @@
+/* Near-Me container */
+.near-me-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* The NEAR-ME button */
+.near-me-button {
+  background: #2a9aea;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  flex-shrink: 0;               /* don’t let it shrink in flex */
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+.near-me-button:hover {
+  background: #3a8ecf;
+}
+.near-me-button:active {
+  transform: scale(0.97);
+}
+
+/* The distance-filter dropdown */
+.near-me-select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #f0f8ff;
+  transition: border-color 0.3s ease;
+  flex-shrink: 0;               /* don’t let it shrink either */
+}
+.near-me-select:focus {
+  border-color: #4fa8e9;
+  outline: none;
+}
