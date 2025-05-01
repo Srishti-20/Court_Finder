@@ -20,7 +20,7 @@ const customIcon = L.icon({
 
 // Selected court icon with a red border or another distinguishing feature
 const selectedIcon = L.icon({
-  iconUrl: "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
+  iconUrl: "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
   shadowUrl:
   "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
   shadowSize: [25, 10],     // Reduced shadow size
@@ -28,6 +28,17 @@ const selectedIcon = L.icon({
   iconSize: [30, 30],
   iconAnchor: [10, 30],
   popupAnchor: [0, -28],
+});
+
+const hoverIcon = L.icon({
+  iconUrl: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+  iconSize: [30, 30],
+  iconAnchor: [10, 30],
+  popupAnchor: [0, -28],
+  shadowUrl:
+    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
+  shadowSize: [25, 10],
+  shadowAnchor: [10, 10],
 });
 
 // Helper that flies to the selected court
@@ -49,7 +60,8 @@ function FlyToSelected({ selectedCourt }) {
 const MapComponent = memo(({ 
   courts, 
   onCourtSelect, 
-  selectedCourt,  
+  selectedCourt,
+  hoveredCourt
 }) => { const centerUSA = [37.0902, -95.7129];
 
   return (
@@ -63,6 +75,19 @@ const MapComponent = memo(({
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <FlyToSelected selectedCourt={selectedCourt} />
+
+      {/* Show hoveredCourt marker separately, if it's not already the selected one */}
+      {hoveredCourt && hoveredCourt.SN !== selectedCourt?.SN && (
+        <Marker
+          position={[hoveredCourt.Latitude, hoveredCourt.Longitude]}
+          icon={hoverIcon}
+        >
+          <Tooltip direction="top" offset={[0, -20]} opacity={1} permanent={false}>
+            <strong>{hoveredCourt.Name}</strong><br />
+            {hoveredCourt.Location}
+          </Tooltip>
+        </Marker>
+      )}
 
       {courts.map((court) => {
         const isSelected = court.SN === selectedCourt?.SN;

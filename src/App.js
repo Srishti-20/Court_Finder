@@ -33,6 +33,11 @@ function App() {
   const [showSearchRange, setShowSearchRange] = useState(false);
   const [showSuggestions, setShowSuggestions] = useState(true);
 
+  const [hoveredCourt, setHoveredCourt] = useState(null);
+  const handleCourtHover = (court) => {
+    setHoveredCourt(court);
+  };
+
 
 
   // ───── Fetch courts on mount ─────
@@ -278,6 +283,7 @@ return (
           courts={filteredCourts}
           onCourtSelect={handleCourtSelect}
           selectedCourt={selectedCourt}
+          hoveredCourt={hoveredCourt}
         />
       </div>
     </div>
@@ -294,6 +300,7 @@ return (
         <FilteredList
           courts={filteredCourts}
           onCourtSelect={handleCourtSelect}
+          onCourtHover={handleCourtHover}
         />
       </div>
     </div>
