@@ -37,7 +37,7 @@ function App() {
 
   // ───── Fetch courts on mount ─────
   useEffect(() => {
-    fetch("https://1abd-110-235-236-14.ngrok-free.app/api/courts")
+    fetch("https://courtfinder-db.onrender.com/api/courts")
       .then((res) => res.json())
       .then((data) => setCourts(data))
       .catch((err) => console.error("API Fetch error:", err));
