@@ -268,44 +268,40 @@ return (
         )}
       </div>
     </div>
+    {/* Main Vertical Container */}
+    <div style={{ display: "flex", flexDirection: "column", gap: 20, marginTop: 20 }}>
 
-    {/* Main Section: Metadata + Map */}
-    <div style={{ display: "flex", flexDirection: "column", gap: 10, marginTop: 20 }}>
-
-      {/* Metadata on top */}
-      <div style={{ alignSelf: "flex-start", maxWidth: "600px", width: "auto" }}>
+      {/* Top: Court Metadata */}
+      <div style={{ alignSelf: "flex-start", maxWidth: "600px", width: "100%" }}>
         <CourtMetadataBox court={selectedCourt} />
       </div>
 
-      {/* Map below */}
-      <div style={{ flex: "0 0 auto" }}>
-        <MapComponent
-          courts={filteredCourts}
-          onCourtSelect={handleCourtSelect}
-          selectedCourt={selectedCourt}
-          hoveredCourt={hoveredCourt}
-        />
-      </div>
-    </div>
+      {/* Middle: Split view - Left: List + Filters, Right: Map */}
+      <div style={{ display: "flex", gap: 10 }}>
 
+        {/* Left Column (50%): List + Filters */}
+        <div style={{ width: "50%", display: "flex", flexDirection: "column", gap: 10 }}>
+          <FilteredList
+            courts={filteredCourts}
+            onCourtSelect={handleCourtSelect}
+            onCourtHover={handleCourtHover}
+          />
+          <FilterDropdown filters={filters} setFilters={setFilters} />
+        </div>
 
-    {/* Bottom Section: Filters + List */}
-    <div style={{ display: "flex", marginTop: 20, gap: 10 }}>
-      <div style={{ flex: "0 0 35%" }}>
-        <FilterDropdown filters={filters} setFilters={setFilters} />
-      </div>
-
-      {/* Filtered List (wrapped for .filtered-list styling) */}
-      <div style={{ flex: 1 }}>
-        <FilteredList
-          courts={filteredCourts}
-          onCourtSelect={handleCourtSelect}
-          onCourtHover={handleCourtHover}
-        />
+        {/* Right Column (50%): Map */}
+        <div style={{ width: "50%" }}>
+          <MapComponent
+            courts={filteredCourts}
+            onCourtSelect={handleCourtSelect}
+            selectedCourt={selectedCourt}
+            hoveredCourt={hoveredCourt}
+          />
+        </div>
       </div>
     </div>
   </div>
-);
+  );
 }
 
 export default App;

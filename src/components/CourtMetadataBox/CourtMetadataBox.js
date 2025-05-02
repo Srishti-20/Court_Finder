@@ -21,7 +21,7 @@ const CourtMetadataBox = ({ court }) => {
     }
   
     try {
-      const response = await fetch(`http://localhost:5001/api/courts/${court._id}`, {
+      const response = await fetch(`https://courtfinder-db.onrender.com/api/courts/${court._id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
