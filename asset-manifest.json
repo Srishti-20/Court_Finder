@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Court_Finder/static/css/main.b3142bc3.css",
-    "main.js": "/Court_Finder/static/js/main.07bf0628.js",
+    "main.js": "/Court_Finder/static/js/main.fc37a6c4.js",
     "index.html": "/Court_Finder/index.html",
     "main.b3142bc3.css.map": "/Court_Finder/static/css/main.b3142bc3.css.map",
-    "main.07bf0628.js.map": "/Court_Finder/static/js/main.07bf0628.js.map"
+    "main.fc37a6c4.js.map": "/Court_Finder/static/js/main.fc37a6c4.js.map"
   },
   "entrypoints": [
     "static/css/main.b3142bc3.css",
-    "static/js/main.07bf0628.js"
+    "static/js/main.fc37a6c4.js"
   ]
 }
