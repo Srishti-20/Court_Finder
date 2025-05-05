@@ -8,7 +8,7 @@ const CourtMetadataBox = ({ court }) => {
   useEffect(() => {
     // Initialize booking link when court changes
     if (court) {
-      setBookingLink(court.BookingLink || "https://example.com");
+      setBookingLink(court["Booking Link"] || "https://example.com");
       setIsEditing(false);
     }
   }, [court]);
@@ -26,7 +26,7 @@ const CourtMetadataBox = ({ court }) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ BookingLink: bookingLink }), // Send the BookingLink
+        body: JSON.stringify({ "Booking Link": bookingLink }), // Send the BookingLink
       });
   
       if (!response.ok) throw new Error("Failed to update");
