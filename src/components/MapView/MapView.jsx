@@ -112,8 +112,10 @@ const MapView = React.memo(
         center={mapCenter}
         zoom={5}
         style={{ height: '100%', width: '100%' }}
+        zoomControl={false}
         whenCreated={(mapInstance) => {
           mapRef.current = mapInstance;
+          L.control.zoom({ position: 'bottomleft' }).addTo(mapInstance);
         }}
       >
         <TileLayer
