@@ -1,19 +1,16 @@
-/* App.css */
-body {
-  background: #f0f8ff;         /* very light blue */
-  font-family: Arial, sans-serif;
-  color: #1f1f1f;
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
 
-/* Header */
-h1 {
-  text-align: center;
-  background: #A9D3DF;         /* your light-blue */
-  color: #202020;
-  padding: 14px 0;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  font-size: 1.75rem;
-  border-radius: 4px;
-  cursor: pointer
+.left-panel {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+.right-panel {
+  flex: 1;
+  height: 90vh;
 }

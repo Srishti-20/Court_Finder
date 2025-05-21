@@ -1,0 +1,17 @@
+.filter-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 1rem;
+    border-right: 1px solid #ccc;
+    background: #f9f9f9;
+    height: 100%;
+    width: 250px;
+  }
+  
+  .filter-panel label {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+  }
+  
